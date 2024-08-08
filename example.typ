@@ -20,14 +20,14 @@ Los parámetros que acepta la función `conf` son:
 - título: El título del tema.
 - autor: Un diccionario con campos `nombre` y `pronombre`. Para los pronombres, importar el diccionario `pronombre` desde `conf.typ`. Los valores disponibles son `pronombre.el`, `pronombre.ella` y `pronombre.elle`.
 - informe: `false` si es la propuesta de tema, `true` si es el informe final.
-- codigo: Omitir si es la propuesta de tema. Si es el informe final, colocar el código del ramo. (CC6908 para malla v3, CC6907 para malla v5)
-- modalidad: Puede ser \"Memoria\", \"Práctica extendida\", \"Titulación con Magíster\" o \"Doble Titulación de Dos Especialidades\"
+- codigo: Omitir si es la propuesta de tema. Si es el informe final, colocar el código del ramo. (CC6908 para malla v3, CC6907 para malla v5, CC7980 para Tesis II)
+- modalidad: Puede ser \"Memoria\", \"Práctica extendida\", \"Titulación con Magíster\" o \"Doble Titulación de Dos Especialidades\". Por defecto, en este template está configurado como "Titulación con Magíster".
 - profesores: Lista de profesores guías. Cada elemento de la lista es un diccionario con campos `nombre` y `pronombre`. Si es un solo elemento, recordar poner una coma al final: `(dict_guia,)`
 - supervisor: Información del supervisor en caso de práctica extendida. Es un diccionario con campos `nombre` y `pronombre`.
 - anno: Año en que se entrega el informe. Por defecto se usa el año actual.
 - espaciado_titulo: Espaciado extra antes del título y al rededor de autor. Por defecto es `1fr`. Se puede usar `2fr` para un espaciado doble, `3fr` para un espaciado triple, etc.
 
-Como aproximación, se espera que la propuesta sea de 5 a 10 páginas.
+Como aproximación, se espera que la tesis aborde unas 50 páginas.
 
 No es necesario poner texto antes de la introducción.]
 
@@ -42,17 +42,28 @@ Motivar la necesidad, la importancia y/o el valor de tener una (mejor) solución
 
 En el caso de la práctica extendida, incluir detalles de la organización, su quehacer, el equipo y el supervisor con los cuales se va a trabajar, la relevancia del problema a la organización, etc.
 
-(1 a 2 páginas)]
-
-= Situación Actual
-
-#guia(visible: mostrar_guias)[Discutir las soluciones o recursos existentes relacionados con el problema. Justificar por qué es necesario un trabajo novedoso.
+En el caso de Tesis, se recomienda inclcuir un breve resumen del desarrollo del trabajo, haciendo énfasis en el problema, la metodología y los resultados obtenidos.
 
 (1 a 2 páginas)]
+
+= Marco Teórico
+
+#guia(visible: mostrar_guias)[Discutir las soluciones o recursos existentes relacionados con el problema; es decir, el estado del arte y la revisión de literatura relacionada al problema y a la solución que se busca plantear. Justificar por qué es necesario un trabajo novedoso.]
 
 Ejemplos de referencias:
 - Conferencia: @CorlessJK97 // azucar sintactica para #cite("CorlessJK97")
-- Revista y Tesis: #cite("NewmanT42", "Turing38") // para citas múltiples se usa #cite
+
+= Problema 
+
+#guia(visible:mostrar_guias)[El planteamiento del problema. Es decir, dada la investigación realizada y el contexto en el que se desarrolla, cuál es el problema que se desprende y se quiere solucionar. Se espera que dentro de todo sea conciso y abordable para el alcance del trabajo de tesis.]
+
+= Preguntas de investigación
+
+#guia(visible:mostrar_guias)[Tres a cinco preguntas de investigación que se desprendan del problema. Idealmente, se espera que se puedan responder en el transcurso del trabajo.]
+
+= Hipótesis
+
+#guia(visible:mostrar_guias)[Lo que se busca probar a partir del problema planteado. La idea es que sea lo bastante específica como para poder reproducir el trabajo presentado (es decir, no se vale poner "Si yo pongo un chocolate al sol, éste se derrite", si no que debería ser más como "Si yo pongo un chocolate a pleno sol en un día soleado con 38°C de temperatura durante 1 hora, entonces el chocolate se derretirá parcialmente debido a la transferencia de calor por radiación del Sol.").]
 
 = Objetivos
 
@@ -101,22 +112,23 @@ Describe cómo vas a poder evaluar el trabajo en términos de cuán bien cumple 
 
 (1 a 2 párrafos)]
 
-= Solución Propuesta
+= Metodología
 
-#guia(visible: mostrar_guias)[
-Una descripción general de la solución propuesta: los datos, las técnicas, las tecnologías, las herramientas, los lenguajes, los marcos, etc., que se usarán para intentar lograr los objetivos planteados. Aquí hay que contestar la pregunta: ¿_cómo_ vas a lograr los objetivos planteados? Aquí, sí, está muy bien hablar de Javascript, CNNs, Numpy, Django, índices invertidos, árboles wavelet, privacidad diferencial, PageRank, Diffie--Hellman, triangulaciones de Delaunay, CUDA, Postgres, etc.
-    
-(1 a 2 páginas)]
+#guia(visible: mostrar_guias)[El trabajo realizado. Aquí se aborda toda la parte del diseño de la solución y su implementación, es decir, se habla sobre implementación de código, diseño de experimentos, recolección de datos, etc.]
 
-= Plan de Trabajo (Preliminar)
+= Resultados
 
-#guia(visible: mostrar_guias)[
-Aquí se puede dar una lista preliminar de los pasos que se van a seguir para desarrollar la solución propuesta. La lista debería contemplar la evaluación del trabajo y la escritura del informe final del trabajo de título (memoria o práctica extendida). Siendo un plan preliminar, su propósito es dar una mejor idea de la factibilidad del tema y el trabajo que implica, pero se pueden aplicar cambios al plan para el informe final de este curso.
-    
-(0.5 a 2 páginas)]
+#guia(visible: mostrar_guias)[Aquí van la descripción y visualización de los resultados obtenidos a partir del trabajo, ya sea de forma cualitativa o cuantitativa. OJITO: en esta parte SÓLO SE PONEN LOS RESULTADOS, la discusión de estos queda para el apartado siguiente.]
 
-+ ...
-+ ...
+= Discusión 
+
+#guia(visible: mostrar_guias)[Análisis de los resultados obtenidos a partir del trabajo realizado. Se recomienda hacer contrastes con lo obtenido de la revisión de literatura y estado del arte, además de abordar el análisis en torno al problema que se busca solucionar y la hipótesis que se busca probar.]
+
+= Conclusiones
+
+#guia(visible:mostrar_guias)[Conclusiones del trabajo. Algunas preguntas que pueden guiar las conclusiones son: ¿Se comprobó/refutó la hipótesis? ¿Este trabajo implica un aporte en su área? ¿Existen cosas pendientes, trabajo futuro a realizar?
+
+Se recomienda agregar un párrafo de los posibles futuros trabajos que se desprenden de la tesis presentada.]
 
 #bibliography(
     "bibliografia.yml",
